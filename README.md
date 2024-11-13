@@ -16,12 +16,18 @@ In short, these will render pretty little file previews in your file manager (no
 
 ## Installation
 
+### Manual
+
 * put `.thumbnailer` files in `/usr/share/thumbnailers`
 * put the other files in `/usr/local/bin`, marked as executable
 * remove all the cached thumbnails in `~/.cache/thumbnails`
 * restart Nautilus with `nautilus -q`
 
 The `Makefile` does that for you.
+
+### Debian
+
+Run `./getdeb.sh` and install the package with `sudo dpkg -i 3d-printer-thumbnailer_*.deb`
 
 ## Dependencies
 

@@ -2,10 +2,12 @@
 
 install:
 	echo "Copying files with sudo:"
-	sudo cp *_thumbnailer /usr/local/bin
-	sudo cp *.thumbnailer /usr/share/thumbnailers
+	install *_thumbnailer /usr/bin
+	install *.thumbnailer /usr/share/thumbnailers
+
+clean:
 	echo "Cleaning cache..."
 	-rm -rf ~/.cache/thumbnails
 	echo "Killing Nautilus..."
-	-nautilus -q
-	echo "Done."
+	-nautilus -q >/dev/null 2>&1 || true
+	
