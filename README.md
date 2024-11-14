@@ -1,4 +1,4 @@
-# gnome-thumbnailers
+# 3d-printer-thumbnailer
 
 This is a small set of custom thumbnailer scripts (mostly for 3D printing formats) that I crafted based on various samples floating about on the Internet, and which work in GNOME 42+.
 
@@ -13,13 +13,16 @@ In short, these will render pretty little file previews in your file manager (no
 * `.scad` (OpenSCAD, will blindly render the default object)
 * `.stl` (Actually uses OpenSCAD to render as well)
 * `.blend` (uses the built-in `blender-thumbnailer` that comes with Blender)
+*. `.f3d` (Autodesk Fusion)
 
 ## Installation
 
 ### Manual
 
-* put `.thumbnailer` files in `/usr/share/thumbnailers`
-* put the other files in `/usr/local/bin`, marked as executable
+* put `.thumbnailer` files in `/usr/share/thumbnailers` or local `~/.local/share/thumbnailers`
+* put the other files in `/usr/bin` or local `~/.local/bin`, marked as executable
+* put `fusion.xml` file in `/usr/share/mime/packages` or local `~/.local/share/mime/packages`
+* run `update-mime-database /usr/share/mime` or if local `update-mime-database ~/.local/share/mime`
 * remove all the cached thumbnails in `~/.cache/thumbnails`
 * restart Nautilus with `nautilus -q`
 
@@ -27,11 +30,13 @@ The `Makefile` does that for you.
 
 ### Debian
 
-Run `./getdeb.sh` and install the package with `sudo dpkg -i 3d-printer-thumbnailer_*.deb`
+Run `./getdeb.sh` and install the package with `sudo dpkg -i debian/3d-printer-thumbnailer_*.deb`
+
+or get the `3d-printer-thumbnailer_*.deb` file from the release and install it.
 
 ## Dependencies
 
-* `3mf.thumbnailer` and `gcode.thumbnailer` require nothing but Python 3 installed, because they cheat and use the thumbnail the slicer inserts into the file.
+* `3mf.thumbnailer`, `gcode.thumbnailer` and `fusion.thumbnailer` require nothing but Python 3. They load the thumbnail included in the file.
 * `stlscad.thumbnailer` requires `Xvfb`, `openscad` and `ImageMagick` installed to render and convert files.
 * `blender.thumbnailer` requires Blender to be installed.
 

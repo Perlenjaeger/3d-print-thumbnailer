@@ -3,4 +3,3 @@ Type=X-Thumbnailer
 Name=stl Thumbnailer
 Exec=/usr/bin/stlscad_thumbnailer %i %o %s
 MimeType=text/x-scad;application/x-openscad;application/sla;model/x.stl-binary;model/x.stl-ascii;model/stl
-

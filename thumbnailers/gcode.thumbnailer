@@ -2,4 +2,4 @@
 Type=X-Thumbnailer
 Name=gcode Thumbnailer
 Exec=/usr/bin/gcode_thumbnailer %i %o
-MimeType=text/x.gcode;text/x-gcode;
+MimeType=text/x.gcode;text/x-gcode;text/x-gcode-gx;
