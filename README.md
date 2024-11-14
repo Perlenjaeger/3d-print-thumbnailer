@@ -13,6 +13,7 @@ In short, these will render pretty little file previews in your file manager (no
 * `.scad` (OpenSCAD, will blindly render the default object)
 * `.stl` (Actually uses OpenSCAD to render as well)
 * `.blend` (uses the built-in `blender-thumbnailer` that comes with Blender)
+*. `.f3d` (Autodesk Fusion)
 
 ## Installation
 
@@ -27,11 +28,11 @@ The `Makefile` does that for you.
 
 ### Debian
 
-Run `./getdeb.sh` and install the package with `sudo dpkg -i 3d-printer-thumbnailer_*.deb`
+Run `./getdeb.sh` and install the package with `sudo dpkg -i debian/3d-printer-thumbnailer_*.deb`
 
 ## Dependencies
 
-* `3mf.thumbnailer` and `gcode.thumbnailer` require nothing but Python 3 installed, because they cheat and use the thumbnail the slicer inserts into the file.
+* `3mf.thumbnailer`, `gcode.thumbnailer` and `fusion.thumbnailer` require nothing but Python 3. They load the thumbnail included in the file.
 * `stlscad.thumbnailer` requires `Xvfb`, `openscad` and `ImageMagick` installed to render and convert files.
 * `blender.thumbnailer` requires Blender to be installed.
 
