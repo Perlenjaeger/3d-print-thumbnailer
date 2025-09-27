@@ -13,15 +13,16 @@ In short, these will render pretty little file previews in your file manager (no
 * `.scad` (OpenSCAD, will blindly render the default object)
 * `.stl` (Actually uses OpenSCAD to render as well)
 * `.blend` (uses the built-in `blender-thumbnailer` that comes with Blender)
-*. `.f3d` (Autodesk Fusion)
+* `.f3d` (Autodesk Fusion)
+* `.FCStd` (FreeCAD)
 
 ## Installation
 
 ### Manual
 
-* put `.thumbnailer` files in `/usr/share/thumbnailers` or local `~/.local/share/thumbnailers`
-* put the other files in `/usr/bin` or local `~/.local/bin`, marked as executable
-* put `fusion.xml` file in `/usr/share/mime/packages` or local `~/.local/share/mime/packages`
+* put `thumbnailers/*.thumbnailer` files in `/usr/share/thumbnailers` or local `~/.local/share/thumbnailers`
+* put the `bin` files in `/usr/bin` or local `~/.local/bin`, marked as executable
+* put `mime/packages/fusion.xml` and `mime/packages/org.freecad.FreeCAD.xml` file in `/usr/share/mime/packages` or local `~/.local/share/mime/packages`
 * run `update-mime-database /usr/share/mime` or if local `update-mime-database ~/.local/share/mime`
 * remove all the cached thumbnails in `~/.cache/thumbnails`
 * restart Nautilus with `nautilus -q`
@@ -36,7 +37,7 @@ or get the `3d-printer-thumbnailer_*.deb` file from the release and install it.
 
 ## Dependencies
 
-* `3mf.thumbnailer`, `gcode.thumbnailer` and `fusion.thumbnailer` require nothing but Python 3. They load the thumbnail included in the file.
+* `3mf.thumbnailer`, `gcode.thumbnailer`, `fusion.thumbnailer` and `FreeCAD.thumbnailer` require nothing but Python 3. They load the thumbnail included in the file.
 * `stlscad.thumbnailer` requires `Xvfb`, `openscad` and `ImageMagick` installed to render and convert files.
 * `blender.thumbnailer` requires Blender to be installed.
 

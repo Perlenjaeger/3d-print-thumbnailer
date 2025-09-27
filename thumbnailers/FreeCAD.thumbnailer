@@ -1,0 +1,6 @@
+[Thumbnailer Entry]
+Type=X-Thumbnailer
+Name=FreeCAD Thumbnailer
+TryExec=python3
+Exec=/usr/bin/fcstd_thumbnailer %i %o
+MimeType=application/x-extension-fcstd;

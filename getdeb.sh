@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=1.1.0
+VERSION=1.2.0
 
 sudo checkinstall \
     --pkgname 3d-printer-thumbnailer \
